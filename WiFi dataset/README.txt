@@ -1,25 +1,33 @@
-WiFi Dataset
+Wi-Fi Dataset
 =====================================================
-# Abstract
-Predict the position based on the strength of the nearby wireless signal. This dataset has been used in the paper entitled by "A Unified Framework for Metric Transfer Learning".
+Wi-Fi dataset comes from the Data Mining Challenge at the 2007 ICDM International Conference. This challenge aims to predict the coordinate based on the strength of the nearby wireless signal. 
+This dataset has been used in the paper entitled by "A Unified Framework for Metric Transfer Learning".
 
-
-# Source
-Data comes from the Data Mining Challenge at the 2007 ICDM International Conference. 
-
+# Original Source
+http://www.cse.ust.hk/~qyang/ICDMDMC07/
 
 # Attribute Information
-  wifi_icdm2007.mat
+(1) wifi_icdm2007.mat: this dataset is used for traditional regression task.
   - Including 2642 instances: 505 for training, 2137 for test. 
   - The dimension of the instances is 101. Each attribute represents the strength of a nearby ap.
+  -struct
+    --> src_X:  training instance
+    --> src_labels: coordinate for each instance in src_X
+    --> tar_X:  test instance
+    --> tar_labels: coordinate for each instance in tar_X
 
-  wifi_icdm2007_tr_99.mat
+(2) wifi_icdm2007_tr_99.mat: this dataset is used for transfer learning task on regression problem.
   - Including 621 instances in source domain, 3128 instances in target domain.
   - The dimension of the instances is 99. Each attribute represents the strength of a nearby ap.
-
+  -struct
+    --> src_X:  training instance from source domain instance
+    --> src_labels: coordinate for each instance in src_X
+    --> tar_train_X:  training instance from target domain
+    --> tar_train_labels: coordinate for each instance in tar_train_X
+    --> tar_test_X:  test instance from target domain
+    --> tar_test_labels: coordinate for each instance in tar_test_X
 
 # Copyright Notice
-
 This procedure is for scientific use only and can not be used for commercial purposes. If you are going to use the program in a paper or work, please quote the following paper.
 
 
